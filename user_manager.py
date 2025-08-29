@@ -29,9 +29,12 @@ class UserManager:
 if __name__ == "__main__":
     manager = UserManager()
     for i in range(1,1001):
-        manager.add_user(i, f"User{i}")
+        manager.add_user(1, f"User{i}")
     initialTime = time.time()
-    manager.find_user(500)
-    finalTime = time.time()
-    print("Tardo ", finalTime - initialTime , " seg en encontrar al usuario")
+    total_users = len(manager.get_all_names())
+    if total_users == 0:
+        print("Los usuarios se borraron correctamente")
+    else:
+        raise Exception("No se borraron los usuarios duplicados")
+    print("Los usuarios duplicados se borran como esperados")
         
