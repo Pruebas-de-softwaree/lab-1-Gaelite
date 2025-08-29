@@ -30,6 +30,9 @@ if __name__ == "__main__":
     manager = UserManager()
     for i in range(1,501):
         manager.add_user(i, f"User{i}")
-    avg = manager.average_user_id()
-    print("El proceso termino correctamente, promedio: ", avg)
+    total_users = manager.get_all_names()
+    if len(total_users) == 500:
+        print("El proceso termino correctamente")
+    else:
+        raise Exception("No se tienen los usuarios esperados")
         
