@@ -27,3 +27,7 @@ class UserManager:
 
 
 if __name__ == "__main__":
+    manager = UserManager()
+    for i in range(1,501):
+        manager.add_user(i, f"User{i}")
+    print("El proceso termino correctamente")
