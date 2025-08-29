@@ -28,11 +28,10 @@ class UserManager:
 
 if __name__ == "__main__":
     manager = UserManager()
-    for i in range(1,501):
+    for i in range(1,1001):
         manager.add_user(i, f"User{i}")
-    total_users = manager.get_all_names()
-    if len(total_users) == 500:
-        print("El proceso termino correctamente")
-    else:
-        raise Exception("No se tienen los usuarios esperados")
+    initialTime = time.time()
+    manager.find_user(500)
+    finalTime = time.time()
+    print("Tardo ", finalTime - initialTime , " seg en encontrar al usuario")
         
