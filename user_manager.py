@@ -30,4 +30,9 @@ if __name__ == "__main__":
     manager = UserManager()
     for i in range(1,501):
         manager.add_user(i, f"User{i}")
+        user = manager.find_user(i)
+        if user["id"] == i:
+            pass
+        else:
+            raise Exception("El usuario no se encontro")
     print("El proceso termino correctamente")
