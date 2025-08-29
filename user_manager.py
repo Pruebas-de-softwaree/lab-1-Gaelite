@@ -30,10 +30,6 @@ if __name__ == "__main__":
     manager = UserManager()
     for i in range(1,501):
         manager.add_user(i, f"User{i}")
-        manager.delete_user(i)
-        user = manager.find_user(i)
-        if user == None:
-            pass
-        else:
-            raise Exception("El usuario no se elimino correctamente")
-    print("El proceso termino correctamente")
+    avg = manager.average_user_id()
+    print("El proceso termino correctamente, promedio: ", avg)
+        
